@@ -1,0 +1,186 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.image-container {
+    position: relative; /* Enable positioning within the container */
+    width: 50%; /* Set a fixed width for the container */
+    padding: 0 4rem;
+}
+
+.umbrella {
+  width: 50%;
+}
+.text {
+  width: 50%;
+  padding: 0 20px;
+}
+h1 {
+  font-size: 3rem;
+  color: #333;
+}
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0.2rem 0 0.2rem 0;
+}
+h4 {
+  color: #333;
+  margin: 0.3rem 0 0.3rem 0;
+}
+p {
+  font-size: 16px;
+  color: #666;
+  margin: 1rem 0 0.3rem 0;
+}
+.button {
+  display: block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 70%
+}
+
+.upload-text{
+    padding: 1rem;
+    position: relative;
+    top: -0.2rem;
+    font-size: 1.2rem;
+    left: 2rem;
+}
+
+.imagesupload{
+    display: inline-block;
+}
+#umbrella {
+  width: 35rem;
+  height: 30rem;
+}
+.color-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.color-options div {
+  width: 0.8rem;
+  height: 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.image-display {
+  position: relative;
+  text-align: center;
+}
+
+.clickable {
+  cursor: pointer;
+  position: relative;
+  /* To position the pseudo-element correctly */
+}
+
+/* Styling for pseudo-element to create the hollow outline */
+.clickable.border-outline::after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  right: -1rem;
+  bottom: -1rem;
+  border: 3px solid transparent; /* Initial transparent border */
+  border-radius: 50%;
+  z-index: -1; /* Place it behind the div */
+  transition: all 0.3s ease-in-out; /* Transition for smooth appearance and disappearance */
+}
+
+/* Apply the border color and make it visible when the class is added */
+.clickable.yellow.border-outline::after {
+  border-color: yellow;
+}
+
+.clickable.pink.border-outline::after {
+  border-color: pink;
+}
+
+.clickable.blue.border-outline::after {
+  border-color: blue;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Starting point */
+  }
+  100% {
+    transform: rotate(360deg); /* Complete rotation */
+  }
+}
+
+.loader {
+  animation: spin 2s linear infinite;
+  visibility: hidden;
+}
+
+#loader {
+  position: absolute;
+  top: 38%;
+  left: 31%;
+  /* transform: translate(-50%, -50%); */
+  width: 7rem;
+  height: 7rem;
+}
+
+#loader-upload {
+  position: relative;
+  /* top: 75%; */
+  right: 53%;
+  /* transform: translate(-50%, -50%); */
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: -0.5rem;
+}
+
+/* Uploaded/overlayed image */
+.overlay-image {
+    position: absolute; /* Position absolutely within the container */
+    top:85%; /* Align to the top of the container */
+    left: 38.5%; /* Align to the left of the container */
+    width: 5rem; /* Define width for the overlay image */
+    height: 2rem; /* Define height for the overlay image */
+    z-index: 1; /* Ensure the overlay image appears above the base image */
+}
+
+#imageUpload{
+    display: inline-block;
+    padding-bottom: 0.4rem;
+    width:90%;
+}
+
+.crossbutton{
+    display: inline-block;
+    width: 5%;
+}
